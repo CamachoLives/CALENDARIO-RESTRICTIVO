@@ -26,7 +26,7 @@ export class HeaderComponent {
         case 'DASHBOARD':
             return 'Inicio';
         case 'PROFILE':
-            return 'Perfil';
+            return 'Calendario';
         case 'TABLES':
             return 'Actividades';
         default:
