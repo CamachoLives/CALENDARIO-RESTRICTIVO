@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FullCalendarComponent  } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 
 @Component({
