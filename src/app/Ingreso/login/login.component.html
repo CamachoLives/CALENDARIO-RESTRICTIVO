@@ -1,55 +1,55 @@
-<!-- component -->
+
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Darumadrop+One&family=Noto+Serif+JP:wght@200..900&family=Sigmar&display=swap" rel="stylesheet"><div 
-	class="bg-blue-900 absolute top-0 left-0 bg-gradient-to-b from-gray-900 via-gray-890 to-blue-800 bottom-0 leading-5 h-full w-full overflow-hidden">
-	
-</div>
-<div
-	class="relative   min-h-screen  sm:flex sm:flex-row  justify-center bg-transparent rounded-3xl shadow-xl">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Darumadrop+One&family=Noto+Serif+JP:wght@200..900&family=Sigmar&display=swap" rel="stylesheet">
+<div class="bg-blue-900 absolute top-0 left-0 bg-gradient-to-b from-gray-900 via-gray-890 to-blue-800 bottom-0 leading-5 h-full w-full overflow-hidden"></div>
+
+
+<div class="relative   min-h-screen  sm:flex sm:flex-row  justify-center bg-transparent rounded-3xl shadow-xl">
+
+	<!-- Logo a la Izquierda -->
 	<div class="flex-col flex  self-center lg:px-14 sm:max-w-4xl xl:max-w-md  z-10">
 		<div class="self-start hidden lg:flex flex-col  text-gray-300">
-			
-			<!-- <h1 class="sigmar-regular text-9xl">ELC</h1> -->
 			 <img src="/elc.png">
 			<p class="-mt-16 pr-3 inter opacity-95 text-2xl">Calendario Restrictivo</p>
 		</div>
 	</div>
+
 	<div class="flex justify-center self-center  z-10">
 		<div class="p-12 bg-white mx-auto rounded-3xl w-96 ">
+
+			<!-- Cabecera del login -->
 			<div class="mb-7">
 				<h3 class="font-semibold text-2xl text-gray-800">Autenticación </h3>
-				<p class="text-gray-400">No tiene cuenta? <a href="#"
-						class="text-sm text-blue-700 hover:text-blue-700">Registrese</a></p>
+				<p class="text-gray-400">No tiene cuenta? 
+					<a href="#"class="text-sm text-blue-700 hover:text-blue-700">
+						Registrese
+					</a>
+				</p>
 			</div>
+
 			<div class="space-y-6">
-				<div class="">
-					<input class=" w-full text-sm  px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-blue-400" type="" placeholder="Email">
-              </div>
 
+				<!-- Primer input -->
+				<div>
+					<input [(ngModel)]="numero" class=" w-full text-sm  px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-blue-400" type="" placeholder="Numero">
+              	</div>
+				<!-- Segundo input -->
+				<div x-data="{ show: true }">
+					<input placeholder="Contraseña" [type]="passwordFieldType"  [(ngModel)]="password" class="text-sm text-black-200 px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-gray-200 focus:outline-none focus:border-blue-400">
+				</div>
 
-					<div class="relative" x-data="{ show: true }">
-						<input placeholder="Password" :type="password" class="text-sm text-black-200 px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-gray-200 focus:outline-none focus:border-blue-400">
-						<div class="flex items-center absolute inset-y-0 right-0 mr-3  text-sm leading-5">
+				<!-- Olvidacion de credenciales -->
+				<div class="flex items-center justify-between text-sm ml-auto">
+					<a href="#" class="text-blue-700 hover:text-blue-600">
+						Olvido su contraseña?
+					</a>
+				</div>
 
-						
-
-						</div>
-					</div>
-
-
-					<div class="flex items-center justify-between">
-
-						<div class="text-sm ml-auto">
-							<a href="#" class="text-blue-700 hover:text-blue-600">
-								Olvido su contraseña?
-							</a>
-						</div>
-					</div>
 					<div>
-						<button type="submit" class="w-full flex justify-center bg-blue-800  hover:bg-blue-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
-                Ingresar
+						<button (click)="validarCredenciales()" class="w-full flex justify-center bg-blue-800  hover:bg-blue-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+                	Ingresar
               </button>
 					</div>
 					<div class="flex items-center justify-center space-x-2 my-5">
