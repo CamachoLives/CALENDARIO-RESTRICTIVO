@@ -22,7 +22,7 @@ export default class LoginComponent {
     console.log("here 2 -->", this.password );
     if (this.password === 'admin' && Number(this.numero) === 3148917721) { 
       console.log('Acceso permitido');
-      this.router.navigate(['/business']); // 🔹 Redirigir a "business"
+      this.router.navigate(['/business/dashboard']); // 🔹 Redirigir a "business"
     } else {
       console.log('Acceso denegado');
     }
