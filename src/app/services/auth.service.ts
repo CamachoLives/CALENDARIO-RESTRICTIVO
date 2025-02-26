@@ -4,18 +4,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  constructor() {}
-
-  // Simulación de autenticación (cambiar por una lógica real con backend)
   isAuthenticated(): boolean {
-    return !!localStorage.getItem('userToken'); // Devuelve true si hay un token guardado
+    console.log("autenticacion");
+    return !!localStorage.getItem('userToken');  // Verifica si hay token
   }
 
-  login(token: string) {
-    localStorage.setItem('userToken', token);
-  }
-
-  logout() {
-    localStorage.removeItem('userToken');
+  login(numero: number, password: string): boolean {
+    if (password == 'admin' && numero == 3148917721) {
+      localStorage.setItem('authToken', 'authenticated');
+      console.log("aca");
+      return true;
+      
+    }
+    return false;
   }
 }

@@ -1,18 +1,15 @@
-import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
-import { AuthService } from '../services/auth.service'; // Asegúrate de que esta ruta sea correcta
+import { inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+export const authGuard = () => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
 
-  canActivate(): boolean {
-    if (!this.authService.isAuthenticated()) {
-      this.router.navigate(['/login']); // Redirige al login si no está autenticado
-      return false;
-    }
-    return true;
+  if (!authService.isAuthenticated()) {
+    console.log("⛔ Acceso denegado. Redirigiendo al login...");
+    router.navigate(['/Ingreso']); // 🔹 Cambia esto si tu login está en otro path
+    return false;
   }
-}
+  return true;
+};

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // ⬅️ Importa FormsModule
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,16 +16,17 @@ export default class LoginComponent {
   numero: number | null = null; // Aquí se almacenará el numero ingresado en el html 
   passwordFieldType: string = 'password'; // Este es el control para mostrar u ocultar contraseña, es decir el tipo del campo...
 
-  constructor(private router: Router) {} // 🔹 Inyectar Router en el constructor
+  constructor(private router: Router, private authService: AuthService) {} // ✅ Inyectamos el servicio aquí
 
   validarCredenciales() {
-    console.log("Número ingresado:", this.numero, "Tipo:", typeof this.numero);
-    console.log("here 2 -->", this.password );
-    if (this.password === 'admin' && Number(this.numero) === 3148917721) { 
-      console.log('Acceso permitido');
-      this.router.navigate(['/business/dashboard']); // 🔹 Redirigir a "business"
+    console.log("1--> ", this.numero);
+    console.log("2--> ", this.password);
+
+    if (this.numero && this.authService.login(this.numero, this.password)) {
+      console.log('✅ Acceso permitido');
+      this.router.navigate(['/business/dashboard']); // 🔹 Redirigir a la ruta protegida
     } else {
-      console.log('Acceso denegado');
+      console.log('⛔ Acceso denegadooo');
     }
   }
   
