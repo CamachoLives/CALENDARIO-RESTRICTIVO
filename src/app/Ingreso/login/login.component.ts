@@ -23,11 +23,8 @@ export default class LoginComponent {
   ) {}
 
   validarCredenciales() {
-    console.log("📌 Número ingresado:", this.numero, "Tipo:", typeof this.numero);
-    console.log("📌 Contraseña ingresada:", this.password);
   
     if (this.numero && this.authService.login(this.numero, this.password)) {
-      console.log('✅ Acceso permitido');
   
       if (isPlatformBrowser(this.platformId)) {
         setTimeout(() => { 
