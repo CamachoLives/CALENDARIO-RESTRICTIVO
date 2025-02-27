@@ -1,15 +1,22 @@
-import { inject } from '@angular/core';
+import { inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
 
 export const authGuard = () => {
-  const authService = inject(AuthService);
   const router = inject(Router);
+  const platformId = inject(PLATFORM_ID);
 
-  if (!authService.isAuthenticated()) {
-    console.log("⛔ Acceso denegado. Redirigiendo al login...");
-    router.navigate(['/Ingreso']); // 🔹 Cambia esto si tu login está en otro path
+  
+  // Verificamos si estamos en el navegador antes de acceder a localStorage
+  let isAuthenticated = false;
+  if (isPlatformBrowser(platformId)) {
+    isAuthenticated = localStorage.getItem('authToken') !== null;
+  }
+
+  if (!isAuthenticated) {
+    router.navigate(['/Ingreso']); // Cambia esto si tu login está en otra ruta
     return false;
   }
+  
   return true;
 };
