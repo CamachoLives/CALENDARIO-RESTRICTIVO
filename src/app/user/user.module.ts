@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router'; // IMPORTA ESTO
 import { UserRoutingModule } from './user-routing.module';
 
 
@@ -8,7 +8,8 @@ import { UserRoutingModule } from './user-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    RouterModule
   ]
 })
 export class UserModule { }

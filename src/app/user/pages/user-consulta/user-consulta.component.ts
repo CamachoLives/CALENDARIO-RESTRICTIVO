@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-consulta',
@@ -9,4 +10,6 @@ import { Component } from '@angular/core';
 })
 export class UserConsultaComponent {
   photo = "https://github.com/CamachoLives.png"
+  userId ="Cris"
+
 }
