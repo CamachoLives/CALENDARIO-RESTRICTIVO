@@ -8,12 +8,17 @@ export const routes: Routes = [
   },
   {
     path: 'layout',
-    loadChildren: () => import('./shared/components/layout/layout.component').then(m => m.LayoutComponent),
+    loadChildren: () => import('./shared/components/shared.module').then(m => m.SharedModule),
     canActivate: [authGuard] // Protege esta ruta
   },
   {
     path: 'business',
     loadChildren: () => import('./business/business.module').then(m => m.BusinessModule),
+    canActivate: [authGuard] // Protege esta ruta
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
     canActivate: [authGuard] // Protege esta ruta
   },
   { path: '', redirectTo: 'Ingreso', pathMatch: 'full' },

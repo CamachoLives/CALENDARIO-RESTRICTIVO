@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
     {
@@ -11,6 +10,10 @@ const routes: Routes = [
         {
           path: 'business',
           loadChildren: () => import('../../business/business.module').then(m => m.BusinessModule)
+        },
+        {
+          path: 'user',
+          loadChildren: () => import('../../user/user.module').then(m => m.UserModule)
         }
       ]
     }
