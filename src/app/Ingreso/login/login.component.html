@@ -3,18 +3,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Darumadrop+One&family=Noto+Serif+JP:wght@200..900&family=Sigmar&display=swap" rel="stylesheet">
-<div class="bg-blue-900 absolute top-0 left-0 bg-gradient-to-b from-gray-900 via-gray-890 to-blue-800 bottom-0 leading-5 h-full w-full overflow-hidden"></div>
+<div class="absolute inset-0 h-full w-full bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/7887844/pexels-photo-7887844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+    <div class="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800/80 to-green-800/80"></div>
+</div>
 
 
 <div class="relative   min-h-screen  sm:flex sm:flex-row  justify-center bg-transparent rounded-3xl shadow-xl">
 
-	<!-- Logo a la Izquierda -->
-	<div class="flex-col flex  self-center lg:px-14 sm:max-w-4xl xl:max-w-md  z-10">
-		<div class="self-start hidden lg:flex flex-col  text-gray-300">
-			 <img src="/elc.png">
-			<p class="-mt-16 pr-3 inter opacity-95 text-2xl">Calendario Restrictivo</p>
-		</div>
-	</div>
+
 
 	<div class="flex justify-center self-center  z-10">
 		<div class="p-12 bg-white mx-auto rounded-3xl w-96 ">
@@ -23,7 +19,7 @@
 			<div class="mb-7">
 				<h3 class="font-semibold text-2xl text-gray-800">Autenticación </h3>
 				<p class="text-gray-400">No tiene cuenta? 
-					<a href="#"class="text-sm text-blue-700 hover:text-blue-700">
+					<a href="#"class="text-sm text-green-700 hover:text-green-700">
 						Registrese
 					</a>
 				</p>
@@ -42,13 +38,13 @@
 
 				<!-- Olvidacion de credenciales -->
 				<div class="flex items-center justify-between text-sm ml-auto">
-					<a href="#" class="text-blue-700 hover:text-blue-600">
+					<a href="#" class="text-green-700 hover:text-green-600">
 						Olvido su contraseña?
 					</a>
 				</div>
 
 					<div>
-						<button (click)="validarCredenciales()" class="w-full flex justify-center bg-blue-800  hover:bg-blue-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+						<button (click)="validarCredenciales()" class="w-full flex justify-center bg-green-800  hover:bg-green-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
                 	Ingresar
               </button>
 					</div>
@@ -76,7 +72,7 @@
 				<div class="mt-7 text-center text-gray-300 text-xs">
 					<span>
                 Copyright © 2025
-                <a href="https://codepen.io/uidesignhub" rel="" target="_blank" title="Codepen aji" class="text-blue-500 hover:text-blue-600 ">ELC</a></span>
+                <a href="https://codepen.io/uidesignhub" rel="" target="_blank" title="Codepen aji" class="text-green-500 hover:text-green-600 ">ELC</a></span>
 				</div>
 			</div>
 		</div>
@@ -91,5 +87,9 @@
 	</div>
 	</footer>
 
-<svg class="absolute bottom-0 left-0 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,0L40,42.7C80,85,160,171,240,197.3C320,224,400,192,480,154.7C560,117,640,75,720,74.7C800,75,880,117,960,154.7C1040,192,1120,224,1200,213.3C1280,203,1360,149,1400,122.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"></script>
+<svg class="absolute bottom-0 left-0 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+	<path fill="#fff" fill-opacity="1" d="M0,0L40,42.7C80,85,160,171,240,197.3C320,224,400,192,480,154.7C560,117,640,75,720,74.7C800,75,880,117,960,154.7C1040,192,1120,224,1200,213.3C1280,203,1360,149,1400,122.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+	</path>
+</svg>
+
+<!-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"></script> -->

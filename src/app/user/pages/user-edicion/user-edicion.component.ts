@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './user-edicion.component.html',
   styleUrl: './user-edicion.component.css'
 })
+
 export class UserEdicionComponent {
 
 }

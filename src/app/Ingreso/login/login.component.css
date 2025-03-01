@@ -10,11 +10,33 @@
     font-style: normal;
   }
 
-  .inter{
-    font-family: "Inter", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-  }
-  
-  
+
+  .character-container {
+    position: fixed;
+    bottom: 150px; /* Ajustamos la posición */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px; /* Aumentamos el tamaño */
+    z-index: 10;
+}
+
+.character-container img {
+    width: 100%;
+    display: block;
+    filter: drop-shadow(0px -50px 50px rgba(0, 128, 0, 0.9)); /* Degradado aplicado */
+}
+
+
+.gradient-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 3000px;
+    height: 300px; /* Más alto para cubrir mejor */
+    background: linear-gradient(to top, rgba(0, 128, 0, 0.9), transparent);
+    z-index: 9;
+}
+
+
+
+
