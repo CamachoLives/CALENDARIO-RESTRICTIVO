@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { IftaLabelModule } from 'primeng/iftalabel';
 
 
 @Component({
@@ -16,7 +15,6 @@ export class UserConsultaComponent {
   constructor(private router: Router) {}
 
   editarUsuario() {
-    console.log("Aqui");
     this.router.navigate(['user/user-edicion']);
   }
 }
