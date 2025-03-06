@@ -1,5 +1,15 @@
-<aside class=" bg-gradient-to-br from-gray-800 to-gray-900 -translate-x-80 fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0">
-    <div class="relative border-b border-white/20">
+
+<button (click)="toggleSidebar()" 
+        class="fixed top-4 left-4 z-50 p-2 bg-gray-700 text-white rounded-md xl:hidden">
+    ☰
+</button>
+<aside [ngClass]="{'-translate-x-80': !isSidebarOpen, 'translate-x-0': isSidebarOpen}" 
+       class="bg-gradient-to-br from-gray-800 to-gray-900 fixed inset-y-0 left-0 z-40 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0">
+          
+      <button (click)="toggleSidebar()" class="absolute top-4 right-4 text-white xl:hidden">✖
+      </button>
+
+  <div class="relative border-b border-white/20">
       <a class="flex items-center gap-4 py-6 px-8" routerLink="/dashboard">
         <h6 class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">CALENDARIO</h6>
         <!-- <img src="/elc.png"> -->
@@ -85,3 +95,17 @@
       </ul>
     </div>
   </aside>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const closeButton = document.getElementById("closeButton");
+    const sidebar = document.getElementById("sidebar");
+
+    menuButton.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-80");
+    });
+
+    closeButton.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-80");
+    });
+</script>
