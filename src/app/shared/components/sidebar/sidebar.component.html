@@ -1,5 +1,5 @@
 
-<button (click)="toggleSidebar()" 
+<button *ngIf="!isSidebarOpen" (click)="toggleSidebar()" 
         class="fixed top-4 left-4 z-50 p-2 bg-gray-700 text-white rounded-md xl:hidden">
     ☰
 </button>
@@ -104,11 +104,11 @@
     const closeButton = document.getElementById("closeButton");
     const sidebar = document.getElementById("sidebar");
 
-    menuButton.addEventListener("click", () => {
+    function toggleSidebar() {
         sidebar.classList.toggle("-translate-x-80");
-    });
+        menuButton.style.display = sidebar.classList.contains("-translate-x-80") ? "block" : "none";
+    }
 
-    closeButton.addEventListener("click", () => {
-        sidebar.classList.add("-translate-x-80");
-    });
+    menuButton.addEventListener("click", toggleSidebar);
+    closeButton.addEventListener("click", toggleSidebar);
 </script>
