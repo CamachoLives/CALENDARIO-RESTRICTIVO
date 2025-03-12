@@ -1,13 +1,38 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-dashboard',
-    imports: [],
+    imports: [CommonModule],
     standalone: true,
     templateUrl: './dashboard.component.html',
     styleUrl: './dashboard.component.css'
 })
 export default class DashboardComponent {
+
+  correo = "Example@Hotmail.com"
+
+  clientes = [
+    {
+      name: 'Brinsa',
+      level: 'High',
+      activity: 'development',
+      porcentage: '60'
+    },
+    {
+      name: 'Mnemo',
+      level: 'Medium',
+      activity: 'Cibersecurity',
+      porcentage: '80'
+    },
+    {
+      name: 'Siscomputo',
+      level: 'Low',
+      activity: 'Infraestructure',
+      porcentage: '20'
+    }
+  ]
+
   contacts = [
     {
       name: 'Cristian Camacho',
