@@ -1,7 +1,7 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule,Router } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule], // ✅ Asegura que los módulos sean válidos
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'] // 🔹 Corrección: "styleUrl" → "styleUrls"
+  styleUrls: ['./login.component.css'], // 🔹 Corrección: "styleUrl" → "styleUrls"
 })
 export default class LoginComponent {
   password: string = '';
@@ -25,7 +25,7 @@ export default class LoginComponent {
   validarCredenciales() {
     if (this.numero && this.authService.login(this.numero, this.password)) {
       if (isPlatformBrowser(this.platformId)) {
-        setTimeout(() => { 
+        setTimeout(() => {
           this.router.navigate(['/business/dashboard']);
         }, 100);
       }
