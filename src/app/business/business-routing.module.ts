@@ -6,6 +6,7 @@ import TablesComponent from './tables/tables.component';
 import { LayoutComponent } from '../shared/components/layout/layout.component';
 
 const routes: Routes = [
+  
   {
     path: '',
     component: LayoutComponent,
