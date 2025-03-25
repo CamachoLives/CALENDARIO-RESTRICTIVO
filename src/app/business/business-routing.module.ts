@@ -21,8 +21,7 @@ const routes: Routes = [
 
 //Comentario
 //another
-// Another routhe thta wee need
-//
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
