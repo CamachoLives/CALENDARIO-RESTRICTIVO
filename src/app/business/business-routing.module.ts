@@ -20,7 +20,6 @@ const routes: Routes = [
 ];
 
 //Comentario
-//another
 
 
 @NgModule({
