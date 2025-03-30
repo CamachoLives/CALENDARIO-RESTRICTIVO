@@ -20,7 +20,7 @@ const routes: Routes = [
 ];
 
 //Comentario
-//
+// COMENT
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
