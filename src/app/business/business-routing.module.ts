@@ -19,7 +19,6 @@ const routes: Routes = [
   },
 ];
 
-//Comentario
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
