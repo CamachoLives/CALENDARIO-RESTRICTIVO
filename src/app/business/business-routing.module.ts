@@ -19,7 +19,7 @@ const routes: Routes = [
   },
 ];
 
-// C2
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
