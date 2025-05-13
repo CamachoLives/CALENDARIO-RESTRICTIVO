@@ -19,7 +19,7 @@ const routes: Routes = [
   },
 ];
 
-//Hola
+//Hol
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
