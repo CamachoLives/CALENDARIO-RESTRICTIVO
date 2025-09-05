@@ -26,11 +26,11 @@
 
 				<!-- Primer input -->
 				<div>
-					<input [(ngModel)]="numero" class=" w-full text-sm  px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-blue-400" type="" placeholder="Numero">
+					<input [(ngModel)]="email" class=" w-full text-sm  px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-blue-400" type="" placeholder="Email">
               	</div>
 				<!-- Segundo input -->
 				<div x-data="{ show: true }">
-					<input placeholder="Contraseña" [type]="passwordFieldType"  [(ngModel)]="password" class="text-sm text-black-200 px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-gray-200 focus:outline-none focus:border-blue-400">
+					<input placeholder="Contraseña" [(ngModel)]="password" class="text-sm text-black-200 px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-gray-200 focus:outline-none focus:border-blue-400">
 				</div>
 
 				<!-- Olvidacion de credenciales -->
@@ -41,7 +41,7 @@
 				</div>
 
 					<div>
-						<button (click)="validarCredenciales()" class="w-full flex justify-center bg-green-800  hover:bg-green-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+						<button (click)="onLogin()" class="w-full flex justify-center bg-green-800  hover:bg-green-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
                 	Ingresar
               </button>
 					</div>

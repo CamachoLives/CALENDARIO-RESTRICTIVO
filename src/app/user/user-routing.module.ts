@@ -7,18 +7,20 @@ import { LayoutComponent } from '../shared/components/layout/layout.component';
 
 const routes: Routes = [
   {
-    path: '', 
-    component: LayoutComponent, 
-    children: [  // ✅ Define las rutas internas dentro del layout
-      { path: 'user-consulta', component: UserConsultaComponent },  
+    path: '',
+    component: LayoutComponent,
+    children: [
+      // ✅ Define las rutas internas dentro del layout
+      { path: 'user-consulta', component: UserConsultaComponent },
       { path: 'user-registro', component: UserRegistroComponent },
-      { path: 'user-edicion', component: UserEdicionComponent }
-    ]
-  }
+      { path: 'user-edicion', component: UserEdicionComponent },
+      { path: '', redirectTo: '/login', pathMatch: 'full' },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class UserRoutingModule {}
