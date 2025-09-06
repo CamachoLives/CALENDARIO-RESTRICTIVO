@@ -16,6 +16,9 @@ export default class LoginComponent {
   password = '';
   error = '';
 
+  // Variable para el efecto dinámico
+  rightPanelActive = false;
+
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin() {
@@ -27,9 +30,18 @@ export default class LoginComponent {
         }, 100);
       },
       error: (err) => {
-        this.error = 'Credenciales incorrectas';
+        this.error = 'Incorrect email or password';
         console.error(err);
       },
     });
+  }
+
+  // Funciones para cambiar entre Sign In / Sign Up
+  toggleSignUp() {
+    this.rightPanelActive = true;
+  }
+
+  toggleSignIn() {
+    this.rightPanelActive = false;
   }
 }

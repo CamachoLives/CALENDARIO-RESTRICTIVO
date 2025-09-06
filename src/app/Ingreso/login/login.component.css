@@ -1,42 +1,332 @@
-.sigmar-regular {
-    font-family: "Sigmar", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-  .darumadrop-one-regular {
-    font-family: "Darumadrop One", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-
-  .character-container {
-    position: fixed;
-    bottom: 150px; /* Ajustamos la posición */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 400px; /* Aumentamos el tamaño */
-    z-index: 10;
+/* Reset global del body */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
 }
 
-.character-container img {
+/* Opcional: que el root y tu wrapper ocupen toda la altura */
+app-root, .login-wrapper {
+  min-height: 100%;
+}
+.login-wrapper {
+  position: relative;
+  z-index: 1; /* contenido encima del blur */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+}
+
+.login-wrapper::before {
+  content: '';
+  position: fixed; /* usar fixed asegura que cubra toda la ventana */
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../assets/net1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa toda la altura */
+  width: 100%;
+  box-sizing: border-box;
+  }
+
+
+
+h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+span {
+  font-size: 12px;
+}
+
+a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+
+button {
+  border-radius: 20px;
+  border: 1px solid #1c99ec;
+  background-color: #4164ff;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: #FFFFFF;
+}
+
+form {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+              0 10px 10px rgba(0,0,0,0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%, 49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  50%, 100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.right-panel-active .overlay-container{
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: #4164ff;
+  background: -webkit-linear-gradient(to right, #4164ff, #0c4f5f);
+  background: linear-gradient(to right, #0c4f5f, #4164ff);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #FFFFFF;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+body {margin: 0px !important}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+.social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #DDDDDD;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+
+footer {
+  font-size: 14px;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 999;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+footer i {
+  color: green;
+}
+
+footer a {
+  color: #3c97bf;
+  text-decoration: none;
+}
+
+/* =======================
+      Responsive
+======================= */
+@media (max-width: 900px) {
+  .container {
+    width: 90%;
+    min-height: 600px;
+  }
+  .overlay-container {
+    display: none; /* Para simplificar en pantallas pequeñas */
+  }
+  .sign-in-container,
+  .sign-up-container {
     width: 100%;
-    display: block;
-    filter: drop-shadow(0px -50px 50px rgba(0, 128, 0, 0.9)); /* Degradado aplicado */
-}
-
-
-.gradient-overlay {
-    position: fixed;
-    bottom: 0;
     left: 0;
-    width: 3000px;
-    height: 300px; /* Más alto para cubrir mejor */
-    background: linear-gradient(to top, rgba(0, 128, 0, 0.9), transparent);
-    z-index: 9;
+    transform: translateX(0) !important;
+  }
+  .form-container {
+    padding: 0 30px;
+  }
 }
 
-
-
-
+@media (max-width: 500px) {
+  .login-wrapper h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  button {
+    padding: 10px 30px;
+    font-size: 11px;
+  }
+  input {
+    padding: 10px;
+  }
+}
