@@ -15,6 +15,12 @@ export default class LoginComponent {
   email = '';
   password = '';
   error = '';
+  nombre = '';
+
+  emailr = '';
+  passwordr = '';
+  nombrer = '';
+  errorr = '';
 
   // Variable para el efecto dinámico
   rightPanelActive = false;
@@ -34,6 +40,41 @@ export default class LoginComponent {
         console.error(err);
       },
     });
+  }
+
+  onRegister() {
+    // Validaciones simples
+    if (!this.nombrer || this.nombrer.trim().length < 3) {
+      this.errorr = 'That name is too short';
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!this.emailr || !emailPattern.test(this.emailr)) {
+      this.errorr = 'Into a valid email';
+      return;
+    }
+
+    if (!this.passwordr || this.passwordr.length < 6) {
+      this.errorr = 'password must be at least 6 characters long';
+      return;
+    }
+
+    // Si todo está bien, llama al servicio
+    this.authService
+      .register(this.nombrer, this.emailr, this.passwordr)
+      .subscribe({
+        next: (res) => {
+          this.authService.saveToken(res.token);
+          setTimeout(() => {
+            this.router.navigate(['/business/dashboard']);
+          }, 100);
+        },
+        error: (err) => {
+          this.errorr = 'Something went wrong during registration';
+          console.error(err);
+        },
+      });
   }
 
   // Funciones para cambiar entre Sign In / Sign Up

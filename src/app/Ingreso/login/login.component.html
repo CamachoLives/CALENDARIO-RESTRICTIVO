@@ -9,19 +9,35 @@
     id="container"
   >
     <div class="form-container sign-up-container">
-      <form action="#">
+      <form (ngSubmit)="onRegister()">
         <h1>Create Account</h1>
         <!-- <div class="social-container">
           <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
           <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
         </div> -->
-        <span>Use your email for registration</span>
-        <input type="text" placeholder="Name" />
-        <input type="text" placeholder="Company" />
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <button type="button">Register</button>
+        <span>Use your data for registration</span>
+        <input
+          type="text"
+          [(ngModel)]="nombrer"
+          name="nombrer"
+          placeholder="Name"
+        />
+        <!-- <input type="text" placeholder="Company" /> -->
+        <input
+          type="email"
+          [(ngModel)]="emailr"
+          name="emailr"
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          [(ngModel)]="passwordr"
+          name="passwordr"
+          placeholder="Password"
+        />
+        <button type="submit">Register</button>
+        <p *ngIf="errorr" style="color: rgb(255, 0, 0)">{{ errorr }}</p>
       </form>
     </div>
 
