@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   standalone: true,
@@ -25,15 +26,18 @@ export default class LoginComponent {
   // Variable para el efecto dinámico
   rightPanelActive = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private userService: UserService
+  ) {}
 
   onLogin() {
     this.authService.login(this.email, this.password).subscribe({
       next: (res) => {
         this.authService.saveToken(res.token);
-        setTimeout(() => {
-          this.router.navigate(['/business/dashboard']);
-        }, 100);
+        this.userService.setUser(res.user);
+        this.router.navigate(['/business/dashboard']);
       },
       error: (err) => {
         this.error = 'Incorrect email or password';
@@ -66,9 +70,9 @@ export default class LoginComponent {
       .subscribe({
         next: (res) => {
           this.authService.saveToken(res.token);
-          setTimeout(() => {
-            this.router.navigate(['/business/dashboard']);
-          }, 100);
+
+          this.userService.setUser({ name: this.nombrer, email: this.emailr });
+          this.router.navigate(['/business/dashboard']);
         },
         error: (err) => {
           this.errorr = 'Something went wrong during registration';

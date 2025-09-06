@@ -1,37 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../services/user.service';
+import LoginComponent from '../../Ingreso/login/login.component';
 
 @Component({
-    selector: 'app-dashboard',
-    imports: [CommonModule],
-    standalone: true,
-    templateUrl: './dashboard.component.html',
-    styleUrl: './dashboard.component.css'
+  selector: 'app-dashboard',
+  standalone: true,
+  imports: [CommonModule, LoginComponent],
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css'],
 })
-export default class DashboardComponent {
-
-  correo = "Example@Hotmail.com"
-
+export default class DashboardComponent implements OnInit {
+  correo: string = '';
+  user: any;
   clientes = [
     {
       name: 'Brinsa',
       level: 'High',
       activity: 'development',
-      porcentage: '60'
+      porcentage: '60',
     },
     {
       name: 'Mnemo',
       level: 'Medium',
       activity: 'Cibersecurity',
-      porcentage: '80'
+      porcentage: '80',
     },
     {
       name: 'Siscomputo',
       level: 'Low',
       activity: 'Infraestructure',
-      porcentage: '20'
-    }
-  ]
+      porcentage: '20',
+    },
+  ];
 
   contacts = [
     {
@@ -40,7 +41,7 @@ export default class DashboardComponent {
       image: 'https://github.com/CamachoLives.png',
       contacts: 87,
       gradientColor: 'bg-gradient-to-tr from-blue-600 to-blue-400',
-      contactColor: 'text-green-500'
+      contactColor: 'text-green-500',
     },
     {
       name: 'Esteban Heredia',
@@ -48,7 +49,7 @@ export default class DashboardComponent {
       image: 'https://github.com/here0503.png',
       contacts: 43,
       gradientColor: 'bg-gradient-to-tr from-green-600 to-green-400',
-      contactColor: 'text-yellow-500'
+      contactColor: 'text-yellow-500',
     },
     {
       name: 'Luis Villamizar',
@@ -56,8 +57,15 @@ export default class DashboardComponent {
       image: 'https://github.com/LuisVillamizar.png',
       contacts: 15,
       gradientColor: 'bg-gradient-to-tr from-red-600 to-red-400',
-      contactColor: 'text-red-500'
-    }
+      contactColor: 'text-red-500',
+    },
   ];
 
+  constructor(private userService: UserService) {}
+
+  ngOnInit() {
+    const user = this.userService.getUser();
+    this.correo = user?.name || this.correo; // si no hay nombre, usa correo
+    console.log(user);
+  }
 }
