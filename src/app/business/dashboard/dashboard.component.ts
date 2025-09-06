@@ -13,6 +13,7 @@ import LoginComponent from '../../Ingreso/login/login.component';
 export default class DashboardComponent implements OnInit {
   correo: string = '';
   user: any;
+  error: string = '';
   clientes = [
     {
       name: 'Brinsa',
@@ -65,7 +66,17 @@ export default class DashboardComponent implements OnInit {
 
   ngOnInit() {
     const user = this.userService.getUser();
-    this.correo = user?.name || this.correo; // si no hay nombre, usa correo
-    console.log(user);
+    console.log('usuario --> ', user.email);
+
+    this.userService.getInformation(this.correo).subscribe({
+      next: (res) => {
+        this.user = res;
+        console.log('User info from API:', this.user);
+      },
+      error: (err) => {
+        this.error = 'Incorrect email';
+        console.error(err);
+      },
+    });
   }
 }

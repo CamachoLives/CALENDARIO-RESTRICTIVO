@@ -36,7 +36,7 @@ export default class LoginComponent {
     this.authService.login(this.email, this.password).subscribe({
       next: (res) => {
         this.authService.saveToken(res.token);
-        this.userService.setUser(res.user);
+        this.userService.setUser({ email: this.email });
         this.router.navigate(['/business/dashboard']);
       },
       error: (err) => {
@@ -70,8 +70,7 @@ export default class LoginComponent {
       .subscribe({
         next: (res) => {
           this.authService.saveToken(res.token);
-
-          this.userService.setUser({ name: this.nombrer, email: this.emailr });
+          this.userService.setUser({ emailr: this.emailr });
           this.router.navigate(['/business/dashboard']);
         },
         error: (err) => {
