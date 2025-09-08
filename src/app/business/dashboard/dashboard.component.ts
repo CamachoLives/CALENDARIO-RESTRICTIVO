@@ -63,7 +63,7 @@ export default class DashboardComponent implements OnInit {
   ];
 
   constructor(private userService: UserService) {}
-
+  //
   ngOnInit() {
     const user = this.userService.getUser();
     console.log('usuario --> ', user.email);
