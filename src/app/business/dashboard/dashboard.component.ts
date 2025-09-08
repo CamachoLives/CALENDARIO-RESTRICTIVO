@@ -61,7 +61,6 @@ export default class DashboardComponent implements OnInit {
       contactColor: 'text-red-500',
     },
   ];
-  //
   constructor(private userService: UserService) {}
   ngOnInit() {
     const user = this.userService.getUser();
