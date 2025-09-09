@@ -63,13 +63,10 @@ export default class DashboardComponent implements OnInit {
   ];
   constructor(private userService: UserService) {}
   ngOnInit() {
-    const user = this.userService.getUser();
-    console.log('usuario --> ', user.email);
-
-    this.userService.getInformation(this.correo).subscribe({
+    this.userService.getInformation().subscribe({
       next: (res) => {
-        this.user = res;
-        console.log('User info from API:', this.user);
+        this.user = res.body.nombre;
+        this.correo = res.body.email;
       },
       error: (err) => {
         this.error = 'Incorrect email';

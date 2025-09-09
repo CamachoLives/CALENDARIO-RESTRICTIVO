@@ -11,8 +11,8 @@ export class UserService {
   private userData: { email?: string } = {};
   constructor(private http: HttpClient) {}
 
-  getInformation(email: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}?email=${encodeURIComponent(email)}`);
+  getInformation(): Observable<any> {
+    return this.http.get(`${this.apiUrl}?email=${this.userData.email}`);
   }
 
   setUser(user: any) {
