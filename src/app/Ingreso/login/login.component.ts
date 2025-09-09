@@ -35,7 +35,8 @@ export default class LoginComponent {
   onLogin() {
     this.authService.login(this.email, this.password).subscribe({
       next: (res) => {
-        this.authService.saveToken(res.token);
+        // Im saving the token in the body because in the backend i send the token in the body
+        this.authService.saveToken(res.body);
         this.userService.setUser({ email: this.email });
         this.router.navigate(['/business/dashboard']);
       },

@@ -17,15 +17,21 @@ export class LayoutComponent implements OnInit {
   error = '';
   constructor(private userService: UserService) {}
   ngOnInit() {
-    this.userService.getInformation().subscribe({
-      next: (res) => {
-        this.user = res.body.nombre;
-        localStorage.setItem('user', this.user);
-      },
-      error: (err) => {
-        this.error = 'Incorrect email';
-        console.error(err);
-      },
-    });
+    // Intenta obtener el usuario del sessionStorage primero
+    const storedUser = sessionStorage.getItem('user');
+    if (storedUser) {
+      this.user = storedUser;
+    } else {
+      this.userService.getInformation().subscribe({
+        next: (res) => {
+          this.user = res.body.nombre;
+          sessionStorage.setItem('user', this.user); // guarda para recargas futuras
+        },
+        error: (err) => {
+          this.error = 'Incorrect email';
+          console.error(err);
+        },
+      });
+    }
   }
 }

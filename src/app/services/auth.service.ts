@@ -1,4 +1,4 @@
-import { Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
   private apiUrl = 'http://localhost:7000/api/auth';
-  private readonly tokenKey = 'authToken';
+  private readonly tokenKey = '';
 
   constructor(private http: HttpClient) {}
 
@@ -16,7 +16,11 @@ export class AuthService {
   }
 
   register(nombre: string, email: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, { nombre, email, password });
+    return this.http.post(`${this.apiUrl}/register`, {
+      nombre,
+      email,
+      password,
+    });
   }
 
   saveToken(token: string) {
