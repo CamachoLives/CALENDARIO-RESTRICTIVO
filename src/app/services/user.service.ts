@@ -15,7 +15,10 @@ export class UserService {
     return this.http.get(`${this.apiUrl}?email=${this.userData.email}`);
   }
 
-  setUser(user: any) {
+  setUser(user: any, tokenExpirySeconds: number) {
+    const expiration = new Date().getTime() + tokenExpirySeconds * 1000; // milisegundos
+    const data = { ...user, expiration };
+    sessionStorage.setItem('userData', JSON.stringify(data));
     this.userData = user;
   }
 
@@ -26,5 +29,19 @@ export class UserService {
 
   clearUser() {
     this.userData = {};
+  }
+
+  loadUser() {
+    const stored = sessionStorage.getItem('userData');
+    if (!stored) return null;
+
+    const data = JSON.parse(stored);
+    if (new Date().getTime() > data.expiration) {
+      sessionStorage.removeItem('userData');
+      return null;
+    }
+
+    this.userData = data;
+    return data;
   }
 }

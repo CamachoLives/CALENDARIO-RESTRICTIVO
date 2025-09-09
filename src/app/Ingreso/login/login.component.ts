@@ -37,7 +37,7 @@ export default class LoginComponent {
       next: (res) => {
         // Im saving the token in the body because in the backend i send the token in the body
         this.authService.saveToken(res.body);
-        this.userService.setUser({ email: this.email });
+        this.userService.setUser({ email: this.email }, res.body);
         this.router.navigate(['/business/dashboard']);
       },
       error: (err) => {
@@ -70,8 +70,8 @@ export default class LoginComponent {
       .register(this.nombrer, this.emailr, this.passwordr)
       .subscribe({
         next: (res) => {
-          this.authService.saveToken(res.token);
-          this.userService.setUser({ emailr: this.emailr });
+          this.authService.saveToken(res.body);
+          this.userService.setUser({ emailr: this.emailr }, res.body);
           this.router.navigate(['/business/dashboard']);
         },
         error: (err) => {

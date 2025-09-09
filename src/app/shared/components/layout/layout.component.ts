@@ -18,14 +18,14 @@ export class LayoutComponent implements OnInit {
   constructor(private userService: UserService) {}
   ngOnInit() {
     // Intenta obtener el usuario del sessionStorage primero
-    const storedUser = sessionStorage.getItem('user');
+    const storedUser = this.userService.loadUser(); // <-- aquí cargas el usuario
     if (storedUser) {
-      this.user = storedUser;
+      this.user = storedUser.nombre;
     } else {
       this.userService.getInformation().subscribe({
         next: (res) => {
+          this.userService.setUser(res.body, 3600); // guarda por 1 hora o el tiempo de tu token
           this.user = res.body.nombre;
-          sessionStorage.setItem('user', this.user); // guarda para recargas futuras
         },
         error: (err) => {
           this.error = 'Incorrect email';
