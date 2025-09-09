@@ -4,6 +4,6 @@ import { BusinessRoutingModule } from './business-routing.module';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, BusinessRoutingModule,],
+  imports: [CommonModule, BusinessRoutingModule],
 })
 export class BusinessModule {}

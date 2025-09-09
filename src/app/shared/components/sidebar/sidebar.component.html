@@ -81,7 +81,7 @@
         </a>
       </li>
       <li>
-        <a routerLink="/business/profile">
+        <a>
           <button
             routerLinkActive="bg-gradient-to-tr from-blue-800 to-blue-400 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
             class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 flex w-full items-center gap-4 px-4 capitalize"
@@ -207,9 +207,10 @@
         </p>
       </li>
       <li>
-        <a class="" href="">
+        <a routerLink="/business/profile">
           <button
-            class="min-w-[180px] md:min-w-[256px] w-full middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+            routerLinkActive="bg-gradient-to-tr from-blue-800 to-blue-400 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+            class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 flex w-full items-center gap-4 px-4 capitalize"
             type="button"
           >
             <img class="size-8 rounded-full" src="{{ photo }}" alt="" />
