@@ -7,4 +7,3 @@ import { BusinessRoutingModule } from './business-routing.module';
   imports: [CommonModule, BusinessRoutingModule],
 })
 export class BusinessModule {}
-//
