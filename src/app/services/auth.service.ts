@@ -44,7 +44,7 @@ export class AuthService {
   login(email: string, password: string): Observable<LoginResponse> {
     return this.http
       .post<LoginResponse>(`${this.apiUrl}/login`, {
-        email: email.trim().toLowerCase(),
+        email,
         password,
       })
       .pipe(catchError(this.handleError));
@@ -57,7 +57,7 @@ export class AuthService {
   ): Observable<RegisterResponse> {
     return this.http
       .post<RegisterResponse>(`${this.apiUrl}/register`, {
-        nombre: nombre.trim(),
+        nombre,
         email: email.trim().toLowerCase(),
         password,
       })
