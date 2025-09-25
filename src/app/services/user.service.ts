@@ -1,25 +1,31 @@
 // src/app/services/user.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { log } from 'console';
 
 @Injectable({
   providedIn: 'root', // hace que sea singleton, disponible en toda la app
 })
 export class UserService {
-  private apiUrl = 'http://localhost:7000/users/email';
-  private userData: { email?: string } = {};
+  private apiUrl = 'http://localhost:7000/api/users';
+  private userData: { id?: number } = {};
   constructor(private http: HttpClient) {}
 
   getInformation(): Observable<any> {
-    return this.http.get(`${this.apiUrl}?email=${this.userData.email}`);
+    const token = localStorage.getItem('token'); // o de tu AuthService
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+
+    return this.http.get(`${this.apiUrl}/${this.userData.id}`, { headers });
   }
 
-  setUser(user: any, tokenExpirySeconds: number) {
+  setUser(id: any, tokenExpirySeconds: number) {
     const expiration = new Date().getTime() + tokenExpirySeconds * 1000; // milisegundos
-    const data = { ...user, expiration };
+    const data = { ...id, expiration };
     sessionStorage.setItem('userData', JSON.stringify(data));
-    this.userData = user;
+    this.userData = id;
   }
 
   getUser() {

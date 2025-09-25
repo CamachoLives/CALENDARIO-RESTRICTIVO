@@ -21,7 +21,8 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.userService.getInformation().subscribe({
       next: (res) => {
-        this.perfil = res.body.nombre;
+        console.log('res --> ', res);
+        this.perfil = res.userData.nombre;
       },
       error: (err) => {
         this.error = 'Incorrect email';
@@ -31,8 +32,6 @@ export class SidebarComponent implements OnInit {
   }
 
   toggleSidebar() {
-    console.log('Sidebar antes:', this.isSidebarOpen);
     this.isSidebarOpen = !this.isSidebarOpen;
-    console.log('Sidebar después:', this.isSidebarOpen);
   }
 }

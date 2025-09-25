@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user.service';
-import LoginComponent from '../../Ingreso/login/login.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, LoginComponent],
+  imports: [CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-export default class DashboardComponent implements OnInit {
+export default class DashboardComponent {
   correo: string = '';
   user: any;
   error: string = '';
@@ -61,17 +60,17 @@ export default class DashboardComponent implements OnInit {
       contactColor: 'text-red-500',
     },
   ];
-  constructor(private userService: UserService) {}
-  ngOnInit() {
-    this.userService.getInformation().subscribe({
-      next: (res) => {
-        this.user = res.body.nombre;
-        this.correo = res.body.email;
-      },
-      error: (err) => {
-        this.error = 'Incorrect email';
-        console.error(err);
-      },
-    });
-  }
+  // constructor(private userService: UserService) {}
+  // ngOnInit() {
+  //   this.userService.getInformation().subscribe({
+  //     next: (res) => {
+  //       this.user = res.body.nombre;
+  //       this.correo = res.body.email;
+  //     },
+  //     error: (err) => {
+  //       this.error = 'Incorrect email';
+  //       console.error(err);
+  //     },
+  //   });
+  // }
 }
