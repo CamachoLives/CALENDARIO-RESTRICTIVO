@@ -13,11 +13,14 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   getInformation(): Observable<any> {
-    const token = localStorage.getItem('token'); // o de tu AuthService
+    const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
-
+    console.log('token --> ', token);
+    console.log('header -->', headers);
+    console.log('ID -->', this.userData.id);
+    console.log('Enviando header: ', headers.get('Authorization'));
     return this.http.get(`${this.apiUrl}/${this.userData.id}`, { headers });
   }
 
@@ -27,7 +30,7 @@ export class UserService {
     sessionStorage.setItem('userData', JSON.stringify(data));
     this.userData = id;
   }
-
+  //
   getUser() {
     console.log('object --> ', this.userData);
     return this.userData;
