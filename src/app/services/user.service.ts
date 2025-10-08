@@ -30,7 +30,7 @@ export class UserService {
     sessionStorage.setItem('userData', JSON.stringify(data));
     this.userData = id;
   }
-
+  //
   getUser() {
     console.log('object --> ', this.userData);
     return this.userData;
