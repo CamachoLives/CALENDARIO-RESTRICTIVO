@@ -9,7 +9,7 @@ import { CarouselComponent  } from '../../carousel/carousel.component'
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-
+//
 
 export default  class DashboardComponent  {
   correo: string = '';
