@@ -8,6 +8,6 @@ import dayGridPlugin from '@fullcalendar/daygrid';
   templateUrl: './tables.component.html',
   styleUrl: './tables.component.css',
 })
-export default class TablesComponent {
+export class TablesComponent {
   calendarPlugins = [dayGridPlugin];
 }

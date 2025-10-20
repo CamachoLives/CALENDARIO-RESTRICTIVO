@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselComponent  } from '../../carousel/carousel.component'
+import { TablesComponent  } from '../tables/tables.component'
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, CarouselComponent],
+  imports: [CommonModule, CarouselComponent , TablesComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-//
 
 export default  class DashboardComponent  {
   correo: string = '';
