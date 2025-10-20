@@ -8,12 +8,12 @@ export const routes: Routes = [
   },
   {
     path: 'layout',
-    loadChildren: () => import('./shared/components/shared.module').then(m => m.SharedModule),
+    loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule),
     canActivate: [authGuard] // Protege esta ruta
   },
   {
-    path: 'business',
-    loadChildren: () => import('./business/business.module').then(m => m.BusinessModule),
+    path: 'Inicio',
+    loadChildren: () => import('./Inicio/inicio.module').then(m => m.inicioModule),
     canActivate: [authGuard] // Protege esta ruta
   },
   {

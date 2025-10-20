@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common'; // Importa esto
-import { UserService } from '../../../services/user.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-sidebar',

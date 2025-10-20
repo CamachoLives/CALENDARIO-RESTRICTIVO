@@ -42,7 +42,7 @@ export default class LoginComponent {
           },
           3600
         );
-        this.router.navigate(['/business/dashboard']);
+        this.router.navigate(['/Inicio']);
       },
       error: (err) => {
         this.error = 'Incorrect email or password';
@@ -76,7 +76,7 @@ export default class LoginComponent {
         next: (res) => {
           this.authService.saveToken(res.data.user.email);
           this.userService.setUser({ emailr: this.emailr }, 3600);
-          this.router.navigate(['/business/dashboard']);
+          this.router.navigate(['/Inicio']);
         },
         error: (err) => {
           this.errorr = 'Something went wrong during registration';
