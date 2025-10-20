@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserService } from '../../services/user.service';
+import { CarouselComponent  } from '../../carousel/carousel.component'
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CarouselComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-export default class DashboardComponent {
+
+
+export default  class DashboardComponent  {
   correo: string = '';
   user: any;
   error: string = '';
@@ -60,6 +62,9 @@ export default class DashboardComponent {
       contactColor: 'text-red-500',
     },
   ];
+
+
+
   // constructor(private userService: UserService) {}
   // ngOnInit() {
   //   this.userService.getInformation().subscribe({

@@ -1,0 +1,11 @@
+<div class="relative w-full overflow-hidden">
+  <div class="flex transition-transform duration-500 ease-in-out"
+       [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+    <div *ngFor="let img of images" class="w-full flex-shrink-0">
+      <img [src]="img" class="w-full h-auto max-h-[450px] object-cover" />
+    </div>
+  </div>
+
+  <button (click)="prev()" class="absolute top-1/2 left-4 bg-gray-800 text-white px-3 py-1 rounded-full">‹</button>
+  <button (click)="next()" class="absolute top-1/2 right-4 bg-gray-800 text-white px-3 py-1 rounded-full">›</button>
+</div>
