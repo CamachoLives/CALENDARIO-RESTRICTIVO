@@ -10,7 +10,7 @@ import { CarouselComponent  } from '../../../app/ComponentesGlobales/carousel/ca
   styleUrls: ['./inicio.component.css'],
 })
 
-export default class inicioComponent  {
+export class inicioComponent  {
   correo: string = '';
   user: any;
   error: string = '';

@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
     styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ng-menu-dashboard';
+  title = 'ng-menu-Inicio';
 }
