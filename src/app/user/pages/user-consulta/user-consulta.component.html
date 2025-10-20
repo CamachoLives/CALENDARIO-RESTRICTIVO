@@ -1,42 +1,97 @@
+
+  <div class=" py-6 flex flex-col items-center">
+    <img class="size-32 rounded-full" src="{{ photo }}" alt="">
+    <span class="text-xl font-bold" >{{Name}}</span>
+  </div>
+
+<div>
+  <table class="min-w-full max-w-full text-center text-sm font-light text-surface dark:text-black">
+    <tr class="bg-gray-700">
+      <th class="bg-blue-gray-500">Hoa</th>
+    </tr>
+    <tr class="border-b border-neutral-300 bg-neutral-50 dark:border-blue/10 dark:text-neutral-800">
+      <th class="bg-gray-700 text-white">Empresa</th>
+      <th class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">{{Company}}</th>
+      <th class="bg-gray-700 text-white">Area</th>
+      <th class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">{{Group}}</th>
+    </tr>
+    <tr>
+      <th class="bg-gray-700 text-white">Rol</th>
+      <th class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">{{Role}}</th>
+      <th class="bg-gray-700 text-white">Correo</th>
+      <th class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">{{Email}}</th>
+    </tr>
+    <tr>
+      <th class="bg-gray-700 text-white">Telefono</th>
+      <th class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">{{Phone}}</th>
+      <th class="bg-gray-700 text-white">Pasa tiempos</th>
+      <th class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">{{Hobbies}}</th>
+    </tr>
+  </table>
+</div>
+
+
 <div class="flex flex-col overflow-x-hidden">
-    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-        <div class="overflow-hidden">
-          <table class="min-w-full max-w-full text-center text-sm font-light text-surface dark:text-white">
-            <thead class="border-b border-neutral-300 bg-neutral-50 dark:border-blue/10 dark:text-neutral-800">
-              <tr>
-                <th scope="col" class="px-6 py-4">Nombre</th>
-                <th scope="col" class="px-6 py-4">Apellido</th>
-                <th scope="col" class="px-6 py-4">Correo Electrónico</th>
-                <th scope="col" class="px-6 py-4">Número</th>
-                <th scope="col" class="px-6 py-4">Cargo</th>
-                <th scope="col" class="px-6 py-4"></th>
-              </tr>
-            </thead>
-            <tbody class="text-black">
-              <tr class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">
-                <td class="px-6 py-4 font-medium flex flex-col items-center">
-                    <img class="size-12 rounded-full flex-col mx-auto" src={{photo}} alt="">
-                   <span>Cristian</span>
-                </td>
-                <td class="px-6 py-4">Camacho</td>
-                <td class="px-6 py-4">Rfcamacrisgmail.com</td>
-                <td class="px-6 py-4">3148917721</td>
-                <td class="px-6 py-4">Desarrollador de Software</td>
-                <td class="px-6 py-4">
-                   
-                    <button (click)="editarUsuario()" class="w-full flex items-center justify-center border border-green-500 bg-green-600 from-green-600 to-green-400  hover:border-green-900 hover:bg-white text-sm text-white hover:text-black p-3 rounded-lg tracking-wide font-medium cursor-pointer transition ease-in duration-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z" />
-                          </svg>
-                        <span> Editar</span>
-                    </button>
-                    
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table
+          class="min-w-full max-w-full text-center text-sm font-light text-surface dark:text-white"
+        >
+          <thead
+            class="border-b border-neutral-300 bg-neutral-50 dark:border-blue/10 dark:text-neutral-800"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-4">Nombre</th>
+              <th scope="col" class="px-6 py-4">Apellido</th>
+              <th scope="col" class="px-6 py-4">Correo Electrónico</th>
+              <th scope="col" class="px-6 py-4">Número</th>
+              <th scope="col" class="px-6 py-4">Cargo</th>
+              <th scope="col" class="px-6 py-4"></th>
+            </tr>
+          </thead>
+          <tbody class="text-black">
+            <tr
+              class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500"
+            >
+              <td class="px-6 py-4 font-medium flex flex-col items-center">
+                <img
+                  class="size-12 rounded-full flex-col mx-auto"
+                  src="{{ photo }}"
+                  alt=""
+                />
+                <span>Cristian</span>
+              </td>
+              <td class="px-6 py-4">Camacho</td>
+              <td class="px-6 py-4">Rfcamacrisgmail.com</td>
+              <td class="px-6 py-4">3148917721</td>
+              <td class="px-6 py-4">Desarrollador de Software</td>
+              <td class="px-6 py-4">
+                <button
+                  (click)="editarUsuario()"
+                  class="w-full flex items-center justify-center border border-green-500 bg-green-600 from-green-600 to-green-400 hover:border-green-900 hover:bg-white text-sm text-white hover:text-black p-3 rounded-lg tracking-wide font-medium cursor-pointer transition ease-in duration-500"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z"
+                    />
+                  </svg>
+                  <span> Editar</span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
+  </div>
 </div>
