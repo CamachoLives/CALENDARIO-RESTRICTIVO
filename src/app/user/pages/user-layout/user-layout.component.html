@@ -1,1 +1,60 @@
-<p>user-layout works!</p>
+<div
+  class="py-8 px-6 flex flex-col sm:flex-row items-center sm:items-start sm:space-x-6 bg-gradient-to-r from-white via-blue-50 to-indigo-100 rounded-2xl shadow-md hover:shadow-lg transition-all duration-500"
+>
+  <!-- Imagen de perfil -->
+  <div class="relative group">
+    <img
+      class="size-28 sm:size-32 rounded-full border-4 border-white shadow-md transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3"
+      src="{{ photo }}"
+      alt="Foto de perfil"
+    />
+    <!-- Efecto de brillo -->
+    <div
+      class="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-400 to-indigo-400 opacity-0 group-hover:opacity-30 blur-lg transition duration-500"
+    ></div>
+  </div>
+
+  <!-- Información -->
+  <div class="mt-4 sm:mt-0 text-center sm:text-left">
+    <h2
+      class="text-2xl font-bold text-gray-800 group-hover:text-indigo-600 transition-colors duration-500"
+    >
+      {{ Name }}
+    </h2>
+    <p class="text-sm text-gray-600 mt-1">{{ Role }} / {{ Company }}</p>
+
+    <!-- Botones -->
+    <div class="flex justify-center sm:justify-start space-x-3 mt-4">
+      <a
+        routerLink="/user"
+        routerLinkActive="bg-blue-500 text-white"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="px-5 py-3 border border-blue-500 text-blue-500 text-sm font-medium rounded-lg hover:bg-blue-500 hover:text-white transition"
+      >
+        Perfil
+      </a>
+
+      <a
+        routerLink="/user/user-info"
+        routerLinkActive="bg-blue-500 text-white"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="px-5 py-3 border border-blue-500 text-blue-500 text-sm font-medium rounded-lg hover:bg-blue-500 hover:text-white transition"
+      >
+        Información
+      </a>
+      <a
+        routerLink="/user/user-edicion"
+        routerLinkActive="bg-blue-500 text-white"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="px-5 py-3 border border-blue-500 text-blue-500 text-sm font-medium rounded-lg hover:bg-blue-500 hover:text-white transition"
+      >
+        Configuración
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="w-full max-w-4xl mt-6">
+  <router-outlet></router-outlet>
+</div>

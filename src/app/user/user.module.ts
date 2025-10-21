@@ -6,6 +6,11 @@ import { UserConsultaComponent } from './pages/user-consulta/user-consulta.compo
 import { UserEdicionComponent } from './pages/user-edicion/user-edicion.component';
 import { UserRegistroComponent } from './pages/user-registro/user-registro.component';
 
+import { UserPerfilComponent } from './pages/user-perfil/user-perfil.component';
+import { UserConfiguracionComponent } from './pages/user-configuracion/user-configuracion.component';
+import { UserInformacionComponent } from './pages/user-informacion/user-informacion.component';
+import { UserLayoutComponent } from './pages/user-layout/user-layout.component';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -15,6 +20,10 @@ import { UserRegistroComponent } from './pages/user-registro/user-registro.compo
     UserConsultaComponent,
     UserEdicionComponent,
     UserRegistroComponent,
+    UserPerfilComponent,
+    UserConfiguracionComponent,
+    UserInformacionComponent,
+    UserLayoutComponent,
   ],
 })
 export class UserModule {}
