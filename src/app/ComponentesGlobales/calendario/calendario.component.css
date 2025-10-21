@@ -1,0 +1,12 @@
+/* Ajusta bordes y estilos para integrarlo visualmente */
+.fc {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.fc-toolbar-title {
+  font-weight: 600;
+  color: #1e3a8a;
+}
+.fc-daygrid-day-number {
+  color: #1f2937;
+}
