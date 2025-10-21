@@ -7,19 +7,19 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  imports: [ // ✅ Importar los standalone components aquí
+  imports: [
     CommonModule,
     RouterModule,
     LayoutComponent,
     SidebarComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
-  exports: [ // ✅ Exportarlos para que otros módulos los usen
+  exports: [
     LayoutComponent,
     SidebarComponent,
     HeaderComponent,
-    FooterComponent
-  ]
+    FooterComponent,
+  ],
 })
 export class SharedModule {}

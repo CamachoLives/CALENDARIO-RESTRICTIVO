@@ -1,19 +1,15 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CountryService } from '../../../services/country.service';
-
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-user-edicion',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterModule],
   templateUrl: './user-edicion.component.html',
-  styleUrl: './user-edicion.component.css'
+  styleUrl: './user-edicion.component.css',
 })
-
 export class UserEdicionComponent {
-
-
   imagePreview: string | ArrayBuffer | null = null;
 
   onFileSelected(event: Event): void {
@@ -33,6 +29,4 @@ export class UserEdicionComponent {
   removeImage(): void {
     this.imagePreview = null;
   }
-  
-
 }

@@ -1,35 +1,124 @@
+<div class="py-6 flex flex-col items-center">
+  <img class="size-32 rounded-full" src="{{ photo }}" alt="" />
+  <span class="text-xl font-bold">{{ Name }}</span>
+</div>
 
-  <div class=" py-6 flex flex-col items-center">
-    <img class="size-32 rounded-full" src="{{ photo }}" alt="">
-    <span class="text-xl font-bold" >{{Name}}</span>
+<div class="flex flex-col py-4 space-y-4">
+  <div class="flex space-x-4">
+    <a
+      routerLink="/user"
+      routerLinkActive="bg-blue-500 text-white"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="border-2 border-blue-500 bg-blue text-blue-500 font-bold text-sm py-3 px-6 rounded-lg transition-all duration-300 hover:bg-blue-500 hover:text-white"
+    >
+      Perfil
+    </a>
+
+    <a
+      routerLink="/user/user-info"
+      routerLinkActive="bg-blue-500 text-white"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="border-2 border-blue-500 bg-blue text-blue-500 font-bold text-sm py-3 px-6 rounded-lg transition-all duration-300 hover:bg-blue-500 hover:text-white"
+    >
+      Información
+    </a>
+    <a
+      routerLink="/user/user-edicion"
+      routerLinkActive="bg-blue-500 text-white"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="border-2 border-blue-500 bg-blue text-blue-500 font-bold text-sm py-3 px-6 rounded-lg transition-all duration-300 hover:bg-blue-500 hover:text-white"
+    >
+      Configuración
+    </a>
   </div>
 
+  <!-- Contenedor donde se carga el contenido dinámico -->
+</div>
+
 <div>
-  <table class="min-w-full max-w-full text-center text-sm font-light text-surface dark:text-black">
+  <table
+    class="min-w-full max-w-full text-center text-sm font-light text-surface dark:text-black"
+  >
     <tr class="bg-gray-700">
-      <th class="bg-blue-gray-500">Hoa</th>
-    </tr>
-    <tr class="border-b border-neutral-300 bg-neutral-50 dark:border-blue/10 dark:text-neutral-800">
-      <th class="bg-gray-700 text-white">Empresa</th>
-      <th class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">{{Company}}</th>
-      <th class="bg-gray-700 text-white">Area</th>
-      <th class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">{{Group}}</th>
-    </tr>
-    <tr>
-      <th class="bg-gray-700 text-white">Rol</th>
-      <th class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">{{Role}}</th>
-      <th class="bg-gray-700 text-white">Correo</th>
-      <th class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">{{Email}}</th>
+      <th
+        class="bg-gradient-to-tr from-blue-800 to-blue-400 shadow-md shadow-blue-500/20 text-white"
+      >
+        Perfil
+      </th>
+      <th
+        class="bg-gradient-to-tr from-blue-800 to-blue-400 shadow-md shadow-blue-500/20 text-white"
+      >
+        Información
+      </th>
     </tr>
     <tr>
-      <th class="bg-gray-700 text-white">Telefono</th>
-      <th class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">{{Phone}}</th>
-      <th class="bg-gray-700 text-white">Pasa tiempos</th>
-      <th class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500">{{Hobbies}}</th>
+      <th
+        class="bg-gradient-to-tr from-blue-800 to-blue-400 shadow-md shadow-blue-500/20 text-white"
+      >
+        Empresa
+      </th>
+      <th
+        class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500"
+      >
+        {{ Company }}
+      </th>
+      <th
+        class="bg-gradient-to-tr from-blue-800 to-blue-400 shadow-md shadow-blue-500/20 text-white"
+      >
+        Area
+      </th>
+      <th
+        class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500"
+      >
+        {{ Group }}
+      </th>
+    </tr>
+    <tr>
+      <th
+        class="bg-gradient-to-tr from-blue-800 to-blue-400 shadow-md shadow-blue-500/20 text-white"
+      >
+        Rol
+      </th>
+      <th
+        class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500"
+      >
+        {{ Role }}
+      </th>
+      <th
+        class="bg-gradient-to-tr from-blue-800 to-blue-400 shadow-md shadow-blue-500/20 text-white"
+      >
+        Correo
+      </th>
+      <th
+        class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500"
+      >
+        {{ Email }}
+      </th>
+    </tr>
+    <tr>
+      <th
+        class="bg-gradient-to-tr from-blue-800 to-blue-400 shadow-md shadow-blue-500/20 text-white"
+      >
+        Telefono
+      </th>
+      <th
+        class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500"
+      >
+        {{ Phone }}
+      </th>
+      <th
+        class="bg-gradient-to-tr from-blue-800 to-blue-400 shadow-md shadow-blue-500/20 text-white"
+      >
+        Pasa tiempos
+      </th>
+      <th
+        class="border-b border-neutral-200 dark:border-white/10 hover:bg-gray-700 hover:text-white p-3 duration-500"
+      >
+        {{ Hobbies }}
+      </th>
     </tr>
   </table>
 </div>
-
 
 <div class="flex flex-col overflow-x-hidden">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -94,4 +183,8 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="w-full max-w-4xl mt-6">
+  <router-outlet></router-outlet>
 </div>
