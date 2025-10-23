@@ -1,88 +1,70 @@
 <div class="w-full flex justify-center px-4">
   <div class="mt-6 w-full max-w-[95%]">
-    <div
-      class="flex flex-col md:flex-row justify-between items-start md:space-x-6 space-y-6 md:space-y-0"
-    >
+    <div class="flex flex-col md:flex-row justify-between items-start md:space-x-6 space-y-6 md:space-y-0">
+      
       <!-- BLOQUE IZQUIERDO -->
-      <div
-        class="w-full md:w-[520px] bg-gradient-to-r from-blue-50 via-indigo-50 to-white rounded-2xl shadow-md p-6"
-      >
-        <div class="flex flex-col space-y-4 items-start">
-          <div class="flex flex-wrap items-center gap-3">
-            <div
-              class="bg-gradient-to-b from-blue-500 to-indigo-600 text-white font-semibold px-4 py-3 rounded-xl shadow-md w-28 text-center"
-            >
-              Empresa
-            </div>
-            <div class="text-gray-800 font-medium break-words">Inccredito</div>
+      <div class="w-full md:w-[520px] bg-gradient-to-r from-blue-50 via-indigo-50 to-white rounded-2xl shadow-md p-6">
+        <div class="grid grid-cols-1 gap-4">
+          <!-- Empresa -->
+          <div class="bg-white rounded-xl shadow-md p-4 border border-gray-200">
+            <div class="text-blue-600 font-semibold text-lg mb-2">Empresa</div>
+            <div class="text-gray-800 font-medium">Incocredito</div>
           </div>
 
-          <div class="flex flex-wrap items-center gap-3">
-            <div
-              class="bg-gradient-to-b from-blue-500 to-indigo-600 text-white font-semibold px-4 py-3 rounded-xl shadow-md w-28 text-center"
-            >
-              Área
-            </div>
-            <div class="text-gray-800 font-medium break-words">
-              Desarrollo de la Tecnología
-            </div>
+          <!-- Área -->
+          <div class="bg-white rounded-xl shadow-md p-4 border border-gray-200">
+            <div class="text-blue-600 font-semibold text-lg mb-2">Área</div>
+            <div class="text-gray-800 font-medium">Desarrollo de la Tecnología</div>
           </div>
 
-          <div class="flex flex-wrap items-center gap-3">
-            <div
-              class="bg-gradient-to-b from-blue-500 to-indigo-600 text-white font-semibold px-4 py-3 rounded-xl shadow-md w-28 text-center"
-            >
-              Rol
-            </div>
-            <div class="text-gray-800 font-medium break-words">
-              Ingeniero de Desarrollo
-            </div>
+          <!-- Rol -->
+          <div class="bg-white rounded-xl shadow-md p-4 border border-gray-200">
+            <div class="text-blue-600 font-semibold text-lg mb-2">Rol</div>
+            <div class="text-gray-800 font-medium">Ingeniero de Desarrollo</div>
           </div>
 
-          <div class="flex flex-wrap items-center gap-3">
-            <div
-              class="bg-gradient-to-b from-blue-500 to-indigo-600 text-white font-semibold px-4 py-3 rounded-xl shadow-md w-28 text-center"
-            >
-              Correo
-            </div>
-            <div class="text-gray-800 font-medium break-all">
-              IntraPruebasgmail.com
-            </div>
+          <!-- Correo -->
+          <div class="bg-white rounded-xl shadow-md p-4 border border-gray-200">
+            <div class="text-blue-600 font-semibold text-lg mb-2">Correo</div>
+            <div class="text-gray-800 font-medium break-all">IntraPruebasgmail.com</div>
           </div>
 
-          <div class="flex flex-wrap items-center gap-3">
-            <div
-              class="bg-gradient-to-b from-blue-500 to-indigo-600 text-white font-semibold px-4 py-3 rounded-xl shadow-md w-28 text-center"
-            >
-              Teléfono
-            </div>
-            <div class="text-gray-800 font-medium">3148917721</div>
+          <!-- Teléfono -->
+          <div class="bg-white rounded-xl shadow-md p-4 border border-gray-200">
+            <div class="text-blue-600 font-semibold text-lg mb-2">Teléfono</div>
+            <div class="text-gray-800 font-medium">+57 314 891 7721</div>
           </div>
 
-          <div class="flex flex-wrap items-center gap-3">
-            <div
-              class="bg-gradient-to-b from-blue-500 to-indigo-600 text-white font-semibold px-4 py-3 rounded-xl shadow-md w-28 text-center"
-            >
-              Pasatiempos
-            </div>
-            <div class="text-gray-800 font-medium break-words">
-              Fútbol, Candelear, Deporte, Estudiar
-            </div>
+          <!-- Pasatiempos -->
+          <div class="bg-white rounded-xl shadow-md p-4 border border-gray-200">
+            <div class="text-blue-600 font-semibold text-lg mb-2">Pasatiempos</div>
+            <div class="text-gray-800 font-medium">Fútbol, Salir a rodar, Deporte, Estudiar</div>
           </div>
         </div>
       </div>
 
       <!-- BLOQUE DERECHO -->
-      <div class="flex-1 flex justify-center md:justify-end w-full">
+      <div class="flex-1 flex flex-col space-y-6 w-full mb-6">
+        
+        <!-- NUEVO BLOQUE SOBRE MÍ -->
+        <div class="bg-gradient-to-r from-blue-50 via-indigo-50 to-white rounded-2xl shadow-md p-6">
+          <div class="text-blue-600 font-semibold text-xl mb-4">Sobre mí</div>
+          <p class="text-gray-700 leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+
+        <!-- Calendario -->
         <div class="w-full max-w-[800px]">
-          <div class="bg-white rounded-2xl shadow-md p-4 h-full">
-            <app-calendario class="w-full h-full"></app-calendario>
+          <div class="bg-white rounded-2xl shadow-md p-4">
+            <app-calendario class="w-full"></app-calendario>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- <div class="flex flex-col overflow-x-hidden">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">

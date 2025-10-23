@@ -30,6 +30,7 @@
     "bootstrap": "^5.3.3",
     "express": "^4.18.2",
     "flowbite": "^3.1.2",
+    "interaction": "^0.0.1",
     "ng-zorro-antd": "^19.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
