@@ -24,6 +24,11 @@ export const routes: Routes = [
           import('./user/user.module').then((m) => m.UserModule),
       },
       {
+        path: 'configuracion',
+        loadChildren: () =>
+          import('./configuracion/configuracion.module').then((m) => m.ConfiguracionModule),
+      },
+      {
         path: 'layout',
         loadChildren: () =>
           import('./shared/shared.module').then((m) => m.SharedModule),
