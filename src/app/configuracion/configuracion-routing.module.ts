@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'parametrizacion', component: ParametrizacionComponent },
   { path: 'configuracion', component: ConfiguracionComponent },
   { path: 'usuarios', component: UsuariosComponent },
-  { path: '', redirectTo: 'parametrizacion', pathMatch: 'full' }
+  { path: '', redirectTo: 'configuracion', pathMatch: 'full' }
     ]},
 
 ];

@@ -9,6 +9,14 @@ import { CommonModule } from '@angular/common';
 })
 export class ParametrizacionComponent {
 
+isEditable = false;
+
+  toggleEdit(): void {
+    this.isEditable = !this.isEditable;
+  }
+
+
+
 config = {
     color: '#ffffff',
     ruta: '',
@@ -33,4 +41,19 @@ config = {
     // Aquí puedes llamar a tu servicio para persistir la configuración
   }
 
+
+  modulos = [
+    { nombre: 'Mejoramiento continuo', activo: false },
+    { nombre: 'Consultas', activo: false },
+    { nombre: 'Auditorías', activo: false },
+    { nombre: 'Recursos Humanos', activo: false },
+    { nombre: 'SGSST', activo: false },
+    { nombre: 'Proveedores', activo: false }
+  ];
+
+  toggleModulo(modulo: any): void {
+    modulo.activo = !modulo.activo;
+  }
+
+  
 }

@@ -19,7 +19,7 @@ const routes: Routes = [
       { path: 'user-configuracion', component: UserConfiguracionComponent },
       { path: 'user-informacion', component: UserInformacionComponent },
 
-      { path: '', redirectTo: 'user-layout', pathMatch: 'full' },
+      { path: '', redirectTo: 'user-perfil', pathMatch: 'full' },
     ],
   },
 ];
