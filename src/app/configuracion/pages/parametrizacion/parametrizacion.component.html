@@ -19,7 +19,7 @@
     <!-- Logo -->
     <div>
       <label class="block text-gray-600 mb-2 font-bold">Logo</label>
-      <input type="file" [disabled]="!isEditable"
+      <input type="file" [disabled]="!isEditable" id="logo"  [(ngModel)]="logo" name="logo"
         class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4
         file:rounded-full file:border-0 file:text-sm file:font-semibold
         file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
@@ -28,13 +28,13 @@
     <!-- Color -->
     <div>
       <label class="block text-gray-600 mb-2 font-bold">Color de la plataforma</label>
-      <input type="color" [disabled]="!isEditable" class="w-16 h-10 border rounded" />
+      <input type="color" id="color" [(ngModel)]="color" name="color" [disabled]="!isEditable" class="w-16 h-10 border rounded" />
     </div>
 
     <!-- Ruta -->
     <div>
       <label class="block text-gray-600 mb-2 font-bold">Ruta de almacenamiento</label>
-      <input type="text" [disabled]="!isEditable"
+      <input type="text" [disabled]="!isEditable" [(ngModel)]="path" name="path"
         class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
     </div>
 
@@ -95,7 +95,7 @@
   class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out">
   Cancelar
 </button>
-<button type="submit" [hidden]="!isEditable"
+<button type="submit"  (click)="resultados()" [hidden]="!isEditable"
   class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out">
   Guardar
 </button>
