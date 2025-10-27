@@ -31,6 +31,16 @@ export class ParametrizacionComponent {
   logo = ''
   color = ''
   path = ''
+  idioma = ''
+  caducidad = ''
+  longitudminimapass = ''
+  carousel = ''
+  dashboard = ''
+  autenticacion = ''
+  tiemposesion = ''
+
+
+
   toggleEdit(): void {
     this.isEditable = !this.isEditable;
   }

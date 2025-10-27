@@ -41,9 +41,9 @@
     <!-- Idioma -->
     <div>
       <label class="block text-gray-600 mb-2 font-bold">Idioma</label>
-      <select [disabled]="!isEditable"
+      <select [disabled]="!isEditable" [(ngModel)]="idioma" name="idioma"
         class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <option value="es">Español</option>
+        <option value="es" >Español</option>
         <option value="en">Inglés</option>
         <option value="fr">Francés</option>
       </select>
@@ -52,22 +52,22 @@
     <!-- Tiempo de sesión -->
     <div>
       <label class="block text-gray-600 mb-2 font-bold">Tiempo de sesión (minutos)</label>
-      <input type="number" [disabled]="!isEditable"
+      <input type="number" [disabled]="!isEditable" [(ngModel)]="tiemposesion" name="tiemposesion"
         class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
     </div>
 
     <!-- Toggles -->
     <div class="grid grid-cols-2 gap-4">
       <label class="flex items-center space-x-2">
-        <input type="checkbox" [disabled]="!isEditable" class="h-5 w-5 text-blue-600 font-bold" />
+        <input type="checkbox" [disabled]="!isEditable" class="h-5 w-5 text-blue-600 font-bold" [(ngModel)]="autenticacion" name="autenticacion" />
         <span>Autenticación FA2</span>
       </label>
       <label class="flex items-center space-x-2">
-        <input type="checkbox" [disabled]="!isEditable" class="h-5 w-5 text-blue-600 font-bold" />
+        <input type="checkbox" [disabled]="!isEditable" class="h-5 w-5 text-blue-600 font-bold" [(ngModel)]="dashboard" name="dashboard" />
         <span>Dashboard</span>
       </label>
       <label class="flex items-center space-x-2">
-        <input type="checkbox" [disabled]="!isEditable" class="h-5 w-5 text-blue-600 font-bold" />
+        <input type="checkbox" [disabled]="!isEditable" class="h-5 w-5 text-blue-600 font-bold" [(ngModel)]="carousel" name="carousel" />
         <span>Carousel</span>
       </label>
     </div>
@@ -78,12 +78,12 @@
       <div class="grid grid-cols-2 gap-4">
         <div>
           <label class="block text-gray-600 mb-2 font-bold">Longitud mínima</label>
-          <input type="number" [disabled]="!isEditable"
+          <input type="number" [disabled]="!isEditable" [(ngModel)]="longitudminimapass" name="longitudminimapass"
             class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
         <div>
           <label class="block text-gray-600 mb-2 font-bold">Caducidad (días)</label>
-          <input type="number" [disabled]="!isEditable"
+          <input type="number" [disabled]="!isEditable" [(ngModel)]="caducidad" name="caducidad"
             class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
       </div>
