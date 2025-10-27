@@ -35,7 +35,6 @@ export class ParametrizacionComponent {
     this.isEditable = !this.isEditable;
   }
 
-  //
   onLogoChange(event: any) {
     const file = event.target.files[0];
     console.log("Aqui el archiv --> ", file)
