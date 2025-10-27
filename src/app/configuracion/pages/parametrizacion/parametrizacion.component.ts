@@ -28,6 +28,7 @@ export class ParametrizacionComponent {
   constructor(private http: HttpClient) {}
   isEditable = false;
 
+
   logo = ''
   color = ''
   path = ''
@@ -38,6 +39,7 @@ export class ParametrizacionComponent {
   dashboard = ''
   autenticacion = ''
   tiemposesion = ''
+  
 
 
 
