@@ -39,7 +39,7 @@ export class ParametrizacionComponent {
   dashboard = ''
   autenticacion = ''
   tiemposesion = ''
-  
+  new = ''
 
 
 
