@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -23,8 +27,7 @@ export interface Guardado {
 })
 export class ParametrizacionComponent {
   //Variables
-  private apiUrl = 'http://localhost:7000/administracion/parametrizacion';
-  private readonly tokenKey = 'authToken';
+  private apiUrl = 'http://localhost:7000/configuracion';
   constructor(private http: HttpClient) {}
   isEditable = false;
 
@@ -39,33 +42,44 @@ export class ParametrizacionComponent {
   autenticacion = '';
   tiemposesion = '';
 
-  json = {
-    logo: this.logo,
-    color: this.color,
-    path: this.path,
-    idioma: this.idioma,
-    caducidad: this.caducidad,
-    longitudminimapass: this.longitudminimapass,
-    carousel: this.carousel,
-    dashboard: this.dashboard,
-    autenticacion: this.autenticacion,
-    tiemposesion: this.tiemposesion,
-  };
+  // json = {
+  //   logo: this.logo,
+  //   color: this.color,
+  //   path: this.path,
+  //   idioma: this.idioma,
+  //   caducidad: this.caducidad,
+  //   longitudminimapass: this.longitudminimapass,
+  //   carousel: this.carousel,
+  //   dashboard: this.dashboard,
+  //   autenticacion: this.autenticacion,
+  //   tiemposesion: this.tiemposesion,
+  // };
 
   toggleEdit(): void {
     this.isEditable = !this.isEditable;
   }
 
-  save(): void {
-    this.callUrl(JSON.stringify(this.json));
-  }
+  callUrl() {
+    const json = {
+      logo: this.logo,
+      color: this.color,
+      path: this.path,
+      caducidad: this.caducidad,
+      longitudminimapass: this.longitudminimapass,
+      carousel: this.carousel,
+      dashboard: this.dashboard,
+      autenticacion: this.autenticacion,
+      tiemposesion: this.tiemposesion,
+    };
 
-  callUrl(json: string): Observable<Guardado> {
-    return this.http
-      .post<Guardado>(`${this.apiUrl}`, {
-        json: json,
-      })
-      .pipe(catchError(this.handleError));
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+
+    console.log('JSON EN COMPONENTE --> ', json);
+    console.log('LLAMANDO A LA API...');
+    return this.http.put(`${this.apiUrl}/1`, json, { headers });
   }
 
   modulos = [

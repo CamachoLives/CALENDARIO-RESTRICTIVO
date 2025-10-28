@@ -114,6 +114,7 @@
           class="h-5 w-5 text-blue-600 font-bold"
           [(ngModel)]="autenticacion"
           name="autenticacion"
+          value="false"
         />
         <span>Autenticación FA2</span>
       </label>
@@ -124,6 +125,7 @@
           class="h-5 w-5 text-blue-600 font-bold"
           [(ngModel)]="dashboard"
           name="dashboard"
+          value="false"
         />
         <span>Dashboard</span>
       </label>
@@ -134,6 +136,7 @@
           class="h-5 w-5 text-blue-600 font-bold"
           [(ngModel)]="carousel"
           name="carousel"
+          value="false"
         />
         <span>Carousel</span>
       </label>
@@ -183,7 +186,7 @@
       </button>
       <button
         type="submit"
-        (click)="save()"
+        (click)="callUrl()"
         [hidden]="!isEditable"
         class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
       >

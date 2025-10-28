@@ -17,10 +17,7 @@ export class UserService {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
-    console.log('token --> ', token);
-    console.log('header -->', headers);
-    console.log('ID -->', this.userData.id);
-    console.log('Enviando header: ', headers.get('Authorization'));
+
     return this.http.get(`${this.apiUrl}/${this.userData.id}`, { headers });
   }
 
