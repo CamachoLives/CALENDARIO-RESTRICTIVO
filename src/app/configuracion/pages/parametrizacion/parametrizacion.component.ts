@@ -8,6 +8,7 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { ConfiguracionService } from '../../../services/configuracion/parametrizacion.service';
 
 export interface Guardado {
   success: boolean;
@@ -26,11 +27,10 @@ export interface Guardado {
   styleUrl: './parametrizacion.component.css',
 })
 export class ParametrizacionComponent {
-  //Variables
   private apiUrl = 'http://localhost:7000/configuracion';
-  constructor(private http: HttpClient) {}
-  isEditable = false;
+  constructor(private configuracionService: ConfiguracionService) {}
 
+  isEditable = false;
   logo = '';
   color = '';
   path = '';
@@ -41,19 +41,6 @@ export class ParametrizacionComponent {
   dashboard = '';
   autenticacion = '';
   tiemposesion = '';
-
-  // json = {
-  //   logo: this.logo,
-  //   color: this.color,
-  //   path: this.path,
-  //   idioma: this.idioma,
-  //   caducidad: this.caducidad,
-  //   longitudminimapass: this.longitudminimapass,
-  //   carousel: this.carousel,
-  //   dashboard: this.dashboard,
-  //   autenticacion: this.autenticacion,
-  //   tiemposesion: this.tiemposesion,
-  // };
 
   toggleEdit(): void {
     this.isEditable = !this.isEditable;
@@ -79,7 +66,11 @@ export class ParametrizacionComponent {
 
     console.log('JSON EN COMPONENTE --> ', json);
     console.log('LLAMANDO A LA API...');
-    return this.http.put(`${this.apiUrl}/1`, json, { headers });
+    console.log('aca la api --> ', this.apiUrl);
+    this.configuracionService.updateConfiguracion(1, json).subscribe({
+      next: (response) => console.log('✅ Respuesta del backend:', response),
+      error: (err) => console.error('❌ Error:', err),
+    });
   }
 
   modulos = [
