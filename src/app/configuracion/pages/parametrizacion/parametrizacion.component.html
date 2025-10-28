@@ -5,12 +5,30 @@
       Plataforma
     </h2>
     <!-- Botón para habilitar edición -->
-    <button type="button" (click)="toggleEdit()" class="p-2 hover:bg-gray-200 rounded" [hidden]="isEditable">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-        stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M16.862 4.487a2.25 2.25 0 0 1 3.182 3.182L7.5 20.213l-4.5.75.75-4.5L16.862 4.487z" />
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 7.5l-3-3" />
+    <button
+      type="button"
+      (click)="toggleEdit()"
+      class="p-2 hover:bg-gray-200 rounded"
+      [hidden]="isEditable"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M16.862 4.487a2.25 2.25 0 0 1 3.182 3.182L7.5 20.213l-4.5.75.75-4.5L16.862 4.487z"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19.5 7.5l-3-3"
+        />
       </svg>
     </button>
   </div>
@@ -19,31 +37,55 @@
     <!-- Logo -->
     <div>
       <label class="block text-gray-600 mb-2 font-bold">Logo</label>
-      <input type="file" [disabled]="!isEditable" id="logo"  [(ngModel)]="logo" name="logo"
-        class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4
-        file:rounded-full file:border-0 file:text-sm file:font-semibold
-        file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+      <input
+        type="file"
+        [disabled]="!isEditable"
+        id="logo"
+        [(ngModel)]="logo"
+        name="logo"
+        class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+      />
     </div>
 
     <!-- Color -->
     <div>
-      <label class="block text-gray-600 mb-2 font-bold">Color de la plataforma</label>
-      <input type="color" id="color" [(ngModel)]="color" name="color" [disabled]="!isEditable" class="w-16 h-10 border rounded" />
+      <label class="block text-gray-600 mb-2 font-bold"
+        >Color de la plataforma</label
+      >
+      <input
+        type="color"
+        id="color"
+        [(ngModel)]="color"
+        name="color"
+        [disabled]="!isEditable"
+        class="w-16 h-10 border rounded"
+      />
     </div>
 
     <!-- Ruta -->
     <div>
-      <label class="block text-gray-600 mb-2 font-bold">Ruta de almacenamiento</label>
-      <input type="text" [disabled]="!isEditable" [(ngModel)]="path" name="path"
-        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <label class="block text-gray-600 mb-2 font-bold"
+        >Ruta de almacenamiento</label
+      >
+      <input
+        type="text"
+        [disabled]="!isEditable"
+        [(ngModel)]="path"
+        name="path"
+        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
     </div>
 
     <!-- Idioma -->
     <div>
       <label class="block text-gray-600 mb-2 font-bold">Idioma</label>
-      <select [disabled]="!isEditable" [(ngModel)]="idioma" name="idioma"
-        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <option value="es" >Español</option>
+      <select
+        [disabled]="!isEditable"
+        [(ngModel)]="idioma"
+        name="idioma"
+        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        <option value="es">Español</option>
         <option value="en">Inglés</option>
         <option value="fr">Francés</option>
       </select>
@@ -51,102 +93,165 @@
 
     <!-- Tiempo de sesión -->
     <div>
-      <label class="block text-gray-600 mb-2 font-bold">Tiempo de sesión (minutos)</label>
-      <input type="number" [disabled]="!isEditable" [(ngModel)]="tiemposesion" name="tiemposesion"
-        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <label class="block text-gray-600 mb-2 font-bold"
+        >Tiempo de sesión (minutos)</label
+      >
+      <input
+        type="number"
+        [disabled]="!isEditable"
+        [(ngModel)]="tiemposesion"
+        name="tiemposesion"
+        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
     </div>
 
     <!-- Toggles -->
     <div class="grid grid-cols-2 gap-4">
       <label class="flex items-center space-x-2">
-        <input type="checkbox" [disabled]="!isEditable" class="h-5 w-5 text-blue-600 font-bold" [(ngModel)]="autenticacion" name="autenticacion" />
+        <input
+          type="checkbox"
+          [disabled]="!isEditable"
+          class="h-5 w-5 text-blue-600 font-bold"
+          [(ngModel)]="autenticacion"
+          name="autenticacion"
+        />
         <span>Autenticación FA2</span>
       </label>
       <label class="flex items-center space-x-2">
-        <input type="checkbox" [disabled]="!isEditable" class="h-5 w-5 text-blue-600 font-bold" [(ngModel)]="dashboard" name="dashboard" />
+        <input
+          type="checkbox"
+          [disabled]="!isEditable"
+          class="h-5 w-5 text-blue-600 font-bold"
+          [(ngModel)]="dashboard"
+          name="dashboard"
+        />
         <span>Dashboard</span>
       </label>
       <label class="flex items-center space-x-2">
-        <input type="checkbox" [disabled]="!isEditable" class="h-5 w-5 text-blue-600 font-bold" [(ngModel)]="carousel" name="carousel" />
+        <input
+          type="checkbox"
+          [disabled]="!isEditable"
+          class="h-5 w-5 text-blue-600 font-bold"
+          [(ngModel)]="carousel"
+          name="carousel"
+        />
         <span>Carousel</span>
       </label>
     </div>
 
     <!-- Política de contraseñas -->
     <fieldset class="border rounded p-4">
-      <legend class="text-gray-700 font-semibold mb-2 font-bold">Política de contraseñas</legend>
+      <legend class="text-gray-700 font-semibold mb-2 font-bold">
+        Política de contraseñas
+      </legend>
       <div class="grid grid-cols-2 gap-4">
         <div>
-          <label class="block text-gray-600 mb-2 font-bold">Longitud mínima</label>
-          <input type="number" [disabled]="!isEditable" [(ngModel)]="longitudminimapass" name="longitudminimapass"
-            class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <label class="block text-gray-600 mb-2 font-bold"
+            >Longitud mínima</label
+          >
+          <input
+            type="number"
+            [disabled]="!isEditable"
+            [(ngModel)]="longitudminimapass"
+            name="longitudminimapass"
+            class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
         <div>
-          <label class="block text-gray-600 mb-2 font-bold">Caducidad (días)</label>
-          <input type="number" [disabled]="!isEditable" [(ngModel)]="caducidad" name="caducidad"
-            class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <label class="block text-gray-600 mb-2 font-bold"
+            >Caducidad (días)</label
+          >
+          <input
+            type="number"
+            [disabled]="!isEditable"
+            [(ngModel)]="caducidad"
+            name="caducidad"
+            class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
       </div>
     </fieldset>
 
-
-<div class="flex justify-end items-end space-x-4">
-<button type="submit" (click)="toggleEdit()" [hidden]="!isEditable"
-  class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out">
-  Cancelar
-</button>
-<button type="submit"  (click)="resultados()" [hidden]="!isEditable"
-  class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out">
-  Guardar
-</button>
+    <div class="flex justify-end items-end space-x-4">
+      <button
+        type="submit"
+        (click)="toggleEdit()"
+        [hidden]="!isEditable"
+        class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
+      >
+        Cancelar
+      </button>
+      <button
+        type="submit"
+        (click)="save()"
+        [hidden]="!isEditable"
+        class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
+      >
+        Guardar
+      </button>
     </div>
-
-
   </form>
 </section>
 
-
 <section class="p-6 bg-gray-50 rounded-lg shadow-md mt-4">
-<div class="flex justify-between items-center">
-        <h2 class="text-4xl font-bold mb-6 text-gray-700 text-center">
-            Módulos
-        </h2>
-        <button>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M16.862 4.487a2.25 2.25 0 0 1 3.182 3.182L7.5 20.213l-4.5.75.75-4.5L16.862 4.487z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 7.5l-3-3" />
-            </svg>
-        </button>
-    </div>  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-    <div *ngFor="let modulo of modulos" class="flex items-center justify-between p-4 border rounded">
+  <div class="flex justify-between items-center">
+    <h2 class="text-4xl font-bold mb-6 text-gray-700 text-center">Módulos</h2>
+    <button>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M16.862 4.487a2.25 2.25 0 0 1 3.182 3.182L7.5 20.213l-4.5.75.75-4.5L16.862 4.487z"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19.5 7.5l-3-3"
+        />
+      </svg>
+    </button>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div
+      *ngFor="let modulo of modulos"
+      class="flex items-center justify-between p-4 border rounded"
+    >
       <span class="text-gray-700 font-medium">{{ modulo.nombre }}</span>
       <button
         (click)="toggleModulo(modulo)"
-        [ngClass]="modulo.activo ? 'bg-green-500 hover:bg-green-600' : 'bg-gray-400 hover:bg-gray-500'"
-        class="text-white font-semibold py-1 px-3 rounded transition-colors duration-300">
-        {{ modulo.activo ? 'Activo' : 'Inactivo' }}
+        [ngClass]="
+          modulo.activo
+            ? 'bg-green-500 hover:bg-green-600'
+            : 'bg-gray-400 hover:bg-gray-500'
+        "
+        class="text-white font-semibold py-1 px-3 rounded transition-colors duration-300"
+      >
+        {{ modulo.activo ? "Activo" : "Inactivo" }}
       </button>
     </div>
   </div>
 </section>
 
-
-
 <script>
-    const input = document.getElementById('logoInput');
-    const preview = document.getElementById('logoPreview');
+  const input = document.getElementById("logoInput");
+  const preview = document.getElementById("logoPreview");
 
-    input.addEventListener('change', (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                preview.src = e.target.result;
-                preview.classList.remove('hidden');
-            };
-            reader.readAsDataURL(file);
-        }
-    });
+  input.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        preview.src = e.target.result;
+        preview.classList.remove("hidden");
+      };
+      reader.readAsDataURL(file);
+    }
+  });
 </script>

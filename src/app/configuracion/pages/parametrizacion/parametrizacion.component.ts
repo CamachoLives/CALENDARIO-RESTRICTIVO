@@ -16,58 +16,57 @@ export interface Guardado {
 
 @Component({
   selector: 'app-parametrizacion',
-  standalone:true,
+  standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './parametrizacion.component.html',
   styleUrl: './parametrizacion.component.css',
 })
 export class ParametrizacionComponent {
-  //Variables 
+  //Variables
   private apiUrl = 'http://localhost:7000/administracion/parametrizacion';
   private readonly tokenKey = 'authToken';
   constructor(private http: HttpClient) {}
   isEditable = false;
 
+  logo = '';
+  color = '';
+  path = '';
+  idioma = '';
+  caducidad = '';
+  longitudminimapass = '';
+  carousel = '';
+  dashboard = '';
+  autenticacion = '';
+  tiemposesion = '';
 
-  logo = ''
-  color = ''
-  path = ''
-  idioma = ''
-  caducidad = ''
-  longitudminimapass = ''
-  carousel = ''
-  dashboard = ''
-  autenticacion = ''
-  tiemposesion = ''
-  new = ''
-
-
+  json = {
+    logo: this.logo,
+    color: this.color,
+    path: this.path,
+    idioma: this.idioma,
+    caducidad: this.caducidad,
+    longitudminimapass: this.longitudminimapass,
+    carousel: this.carousel,
+    dashboard: this.dashboard,
+    autenticacion: this.autenticacion,
+    tiemposesion: this.tiemposesion,
+  };
 
   toggleEdit(): void {
     this.isEditable = !this.isEditable;
   }
-  onLogoChange(event: any) {
-    const file = event.target.files[0];
-    console.log("Aqui el archiv --> ", file)
+
+  save(): void {
+    this.callUrl(JSON.stringify(this.json));
   }
 
-  resultados(){
-    const json = {
-      logo : this.logo,
-      color: this.color,
-      path : this.path
-    }
-    console.log("json --> ", json.color,json.logo,json.path)
+  callUrl(json: string): Observable<Guardado> {
+    return this.http
+      .post<Guardado>(`${this.apiUrl}`, {
+        json: json,
+      })
+      .pipe(catchError(this.handleError));
   }
-
-   Save(email: string, password: string): Observable<Guardado> {
-      return this.http
-        .post<Guardado>(`${this.apiUrl}/login`, {
-          email,
-          password,
-        })
-        .pipe(catchError(this.handleError));
-    }
 
   modulos = [
     { nombre: 'Mejoramiento continuo', activo: false },
@@ -81,7 +80,6 @@ export class ParametrizacionComponent {
   toggleModulo(modulo: any): void {
     modulo.activo = !modulo.activo;
   }
-
 
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'Ha ocurrido un error inesperado';
