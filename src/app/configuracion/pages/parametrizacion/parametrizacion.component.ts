@@ -7,7 +7,6 @@ import {
   HttpHeaders,
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 import { ConfiguracionService } from '../../../services/configuracion/parametrizacion.service';
 
 export interface Guardado {
@@ -27,7 +26,6 @@ export interface Guardado {
   styleUrl: './parametrizacion.component.css',
 })
 export class ParametrizacionComponent {
-  private apiUrl = 'http://localhost:7000/configuracion';
   constructor(private configuracionService: ConfiguracionService) {}
 
   isEditable = false;
@@ -59,20 +57,13 @@ export class ParametrizacionComponent {
       tiemposesion: this.tiemposesion,
     };
 
-    const token = localStorage.getItem('token');
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${token}`,
-    });
-
-    console.log('JSON EN COMPONENTE --> ', json);
-    console.log('LLAMANDO A LA API...');
-    console.log('aca la api --> ', this.apiUrl);
     this.configuracionService.updateConfiguracion(1, json).subscribe({
-      next: (response) => console.log('✅ Respuesta del backend:', response),
+      next: (response) =>
+        console.log('✅ Positiva la respuesta del backend:', response),
       error: (err) => console.error('❌ Error:', err),
     });
   }
-
+  //
   modulos = [
     { nombre: 'Mejoramiento continuo', activo: false },
     { nombre: 'Consultas', activo: false },
