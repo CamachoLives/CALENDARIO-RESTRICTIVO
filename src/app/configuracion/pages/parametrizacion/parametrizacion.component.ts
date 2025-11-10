@@ -17,7 +17,6 @@ export interface Guardado {
     id: number;
   };
 }
-//
 
 @Component({
   selector: 'app-parametrizacion',
