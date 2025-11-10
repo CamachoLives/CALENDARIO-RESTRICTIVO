@@ -17,6 +17,7 @@ export interface Guardado {
     id: number;
   };
 }
+//
 
 @Component({
   selector: 'app-parametrizacion',
@@ -63,7 +64,7 @@ export class ParametrizacionComponent {
       error: (err) => console.error('❌ Error:', err),
     });
   }
-  
+
   modulos = [
     { nombre: 'Mejoramiento continuo', activo: false },
     { nombre: 'Consultas', activo: false },
